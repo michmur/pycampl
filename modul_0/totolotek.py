@@ -1,22 +1,39 @@
-from random import random
+"""_summary_
 
-user_numbers = list()
+Returns:
+    _type_: _description_
+"""
+
+from random import randint
 
 print("Totolotek v 1.0.0")
-print("Podaj sześć liczb")
 
-for i in range(6):
-    number = int(input("Podaj liczbę : "))
-    user_numbers.append(number)
-
-
-def generate_lotto_numbers():
-    """Generate set of six numbers
+def user_numbers():
+    """_summary_
 
     Returns:
-        set: set of six numbers
+        _type_: _description_
     """
-    lotto_numbers = set()
-    for i in range(1,7):
-        lotto_numbers.add(random.randint(1,49))
-    return lotto_numbers
+    numbers = []
+    for i in range(6):
+        number = int(input("Podaj liczbę : "))
+        numbers.append(number)
+    return numbers
+
+
+def lotto_numbers():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
+    numbers = set()
+    for i in range(7):
+        numbers.add(randint(1,49))
+    return numbers
+
+lotto = user_numbers
+
+if __name__ == "__main__":
+   p = lotto_numbers()
+   print(p)
