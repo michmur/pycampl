@@ -8,7 +8,7 @@ from random import randint
 
 print("Totolotek v 1.0.0")
 
-def user_numbers():
+def generate_six_numbers():
     """_summary_
 
     Returns:
@@ -19,20 +19,7 @@ def user_numbers():
         numbers.append(randint(1,49))
     return numbers
 
-def lotto_numbers():
-    """_summary_
-
-    Returns:
-        _type_: _description_
-    """
-    numbers = set()
-    for i in range(7):
-        numbers.add(randint(1,49))
-    return numbers
-
-lotto = user_numbers
-
 if __name__ == "__main__":
-    p = lotto_numbers()
-    p = user_numbers()
-    print(p)
+    lotto = generate_six_numbers()
+    user = generate_six_numbers()
+    
