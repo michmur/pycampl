@@ -20,7 +20,6 @@ def user_numbers():
         numbers.append(number)
     return numbers
 
-
 def lotto_numbers():
     """_summary_
 
@@ -35,5 +34,5 @@ def lotto_numbers():
 lotto = user_numbers
 
 if __name__ == "__main__":
-   p = lotto_numbers()
-   print(p)
+    p = lotto_numbers()
+    print(p)
