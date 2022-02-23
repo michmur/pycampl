@@ -25,7 +25,6 @@ if __name__ == "__main__":
     count = 0
 
     while(True):
-        print(lotto,user)
         if len(set(lotto)&set(user)) == 6:
             break
         else:
