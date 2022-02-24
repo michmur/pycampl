@@ -15,20 +15,34 @@ def generate_six_numbers():
         _type_: _description_
     """
     numbers = []
-    while(len(numbers) != 6):
-        numbers.append(randint(1,49))
+    while len(numbers) != 6:
+        numbers.append(randint(1,7))
     return numbers
 
-if __name__ == "__main__":
+def check_if_you_win():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     lotto = generate_six_numbers()
     user = generate_six_numbers()
+    # user = lotto
     count = 0
+    control_list = []
 
-    while(True):
-        if len(set(lotto)&set(user)) == 6:
-            break
+    while len(control_list) != 6:
+        control_list = list(set(lotto)&set(user))
+        if len(control_list) != 0:
+            count += 1
+            # print(f"Udało ci się trafić {len(control_list)} liczb {control_list} losowanie nr : {count:,}")
+            user = generate_six_numbers()
         else:
             user = generate_six_numbers()
             count += 1
-            print(f"Nie udało się trafić szóstki losujemy dalej dla liczb : {user} losowanie numer {count}")
-    
+    print(f"{lotto} {user}")
+    return f"Udało ci się trafić 6 za {count:,} razem, wydałeś {count*3:,} zł"
+
+
+if __name__ == "__main__":
+    print(check_if_you_win())
