@@ -16,7 +16,7 @@ def generate_six_numbers():
     """
     numbers = []
     while len(numbers) != 6:
-        numbers.append(randint(1,7))
+        numbers.append(randint(1,49))
     return numbers
 
 def check_if_you_win():
@@ -33,9 +33,9 @@ def check_if_you_win():
 
     while len(control_list) != 6:
         control_list = list(set(lotto)&set(user))
-        if len(control_list) != 0:
+        if 0 < len(control_list) < 6:
             count += 1
-            # print(f"Udało ci się trafić {len(control_list)} liczb {control_list} losowanie nr : {count:,}")
+            print(f"Udało ci się trafić {len(control_list)} liczb {control_list} losowanie nr : {count:,}")
             user = generate_six_numbers()
         else:
             user = generate_six_numbers()
